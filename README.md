@@ -8,9 +8,19 @@ brew trust getzoorik/tap
 brew install zoorikctl
 ```
 
-`Formula/zoorikctl.rb` is written by the release workflow in `getzoorik/coral`. Do not hand-edit it —
-its `sha256` values are copied out of the release's signed `checksums.txt` rather than recomputed, so
-an edit here silently breaks the one place those digests are checked against a signature.
-
 A formula, not a cask, deliberately: Homebrew does not quarantine a formula's artifact, so `zoorikctl`
 installs without a Gatekeeper prompt, and a formula works on Homebrew-on-Linux too.
+
+## Changes and issues
+
+Each zoorikctl release generates `Formula/zoorikctl.rb` and commits it here, so please do not edit it by
+hand. Its `sha256` values are copied from the release's signed `checksums.txt` rather than recomputed,
+and a hand edit would break the one place those digests are checked against a signature.
+
+To change the formula or zoorikctl itself, open an issue or a pull request in
+[getzoorik/zoorikctl](https://github.com/getzoorik/zoorikctl). Issues about installing with Homebrew
+are welcome here.
+
+## License
+
+Apache-2.0, see [LICENSE](LICENSE). Copyright 2026 Zoorik Private Limited.
